@@ -1,0 +1,128 @@
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+.inputContainer {
+  position: relative;
+  width: 50vw;
+  max-width: 400px;
+  display: flex;
+  flex-flow: column;
+  padding: 5px 10px;
+  margin-top: 1%;
+}
+
+.searchInput {
+  padding: 5px 10px;
+}
+
+.searchInput:focus {
+  outline: none;
+}
+
+.optionsListContainer {
+  width: calc(100% - 20px);
+  position: absolute;
+  top: calc(100% - 6px);
+  left: 10px;
+  overflow-y: scroll;
+  max-height: 33vh;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+  border: 1px solid #ffffff;
+  background-color: #103;
+  z-index: 1;
+}
+
+.listItem {
+  list-style: none;
+  cursor: pointer;
+}
+
+.listItem:hover {
+  background-color: #ffffff;
+  color: #103;
+}
+
+.selectedTimeZonesContainer {
+  width: 100%;
+  min-height: 90%;
+  display: flex;  
+  justify-content: flex-start;
+  flex-flow: wrap;
+  margin-top: 10px;
+}
+
+.lesstThanThreeSavedTimeZones {
+  justify-content: center;
+}
+
+.lesstThanThreeSavedTimeZones .timeZoneCard:first-child {
+  margin-left: 3.5%;
+}
+
+.timeZoneCard {
+  width: 15%;
+  height: 23%;
+  position: relative;
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-end;
+  margin: 0% 3.5%;
+  padding: 1%;
+  border: 1px solid #ffffff;
+  border-radius: 15px;
+}
+
+.timeZoneCard:first-child, .timeZoneCard:nth-child(4n) {
+  margin-left: 20%;
+}
+
+.deleteButton {
+  position: absolute;
+  top: 3%;
+  right: 3%;
+  padding: 5px 10px;
+  border: 1px solid #ffffff;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+@media (max-width: 1024px) {
+  .timeZoneCard {
+    width: 20%;
+  }
+
+  .timeZoneCard:first-child, .timeZoneCard:nth-child(4n) {
+    margin-left: 15%;
+  }
+}
+
+@media (max-width: 768px) {
+  .timeZoneCard {
+    width: 30%;
+  }
+
+  .timeZoneCard:nth-child(4n) {
+    margin-left: 3.5%;
+  }
+
+  .timeZoneCard:first-child, .timeZoneCard:nth-child(2n + 1) {
+    margin-left: 18%;
+  }
+}
+
+@media (max-width: 640px) {
+  .selectedTimeZonesContainer .timeZoneCard {
+    width: 30%;
+    margin: 5% 33%;
+  }
+
+  .lesstThanTwoSavedTimeZones .timeZoneCard:first-child {
+    margin-left: 33%;
+  }
+}
