@@ -4,7 +4,7 @@
   "description": "API challenge clicOH",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "node server.js"
   },
   "author": "Enrique Durand de Cassis",
   "license": "ISC",
