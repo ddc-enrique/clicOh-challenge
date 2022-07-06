@@ -29,7 +29,9 @@ export const Home = (props) => {
 
   const getAllTimeZones = async () => {
     try {
-      let response = await axios.get("http://localhost:4000/api/timezones")
+      let response = await axios.get(
+        "https://enrique-clicoh-challenge.herokuapp.com/api/timezones"
+      )
       if (!response.data.success) throw new Error("Error de conexión")
       const { allTimeZones, savedTimeZones } = response.data
       dispatch({
@@ -54,7 +56,7 @@ export const Home = (props) => {
   const addTimeZone = async (timeZone) => {
     try {
       const response = await axios.put(
-        `http://localhost:4000/api/timezones/${timeZone.fullName}`
+        `https://enrique-clicoh-challenge.herokuapp.com/api/timezones/${timeZone.fullName}`
       )
       dispatch({
         type: ADD_TIMEZONE,
@@ -68,7 +70,7 @@ export const Home = (props) => {
   const removeTimeZone = async (timezone) => {
     try {
       const response = await axios.delete(
-        `http://localhost:4000/api/timezones/${timezone}`
+        `https://enrique-clicoh-challenge.herokuapp.com/api/timezones/${timezone}`
       )
       if (!response.data.success) throw new Error("Error de conexión")
       dispatch({

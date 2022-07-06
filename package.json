@@ -4,7 +4,8 @@
   "description": "API challenge clicOH",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "heroku-postbuild": "cd client && cd npm install && npm run build"
   },
   "author": "Enrique Durand de Cassis",
   "license": "ISC",
